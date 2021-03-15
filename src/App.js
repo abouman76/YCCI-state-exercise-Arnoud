@@ -8,6 +8,25 @@ function App() {
   function plusOne() {
     setScore(score + 1);
   }
+  const minusOne = () => {
+    setScore(score - 1);
+  };
+
+  const plusFive = () => {
+    setScore(score + 5);
+  };
+
+  const minusFive = () => {
+    setScore(score - 5);
+  };
+
+  const divideScore = () => {
+    setScore(score / 2);
+  };
+
+  const resetScore = () => {
+    setScore(score - score);
+  };
 
   return (
     <div className="App">
@@ -19,11 +38,11 @@ function App() {
           </div>
           <div class="buttons">
             <button onClick={plusOne}>+ 1</button>
-            <button>- 1</button>
-            <button>+ 5</button>
-            <button>- 5</button>
-            <button>half score</button>
-            <button>reset</button>
+            <button onClick={minusOne}>- 1</button>
+            <button onClick={plusFive}>+ 5</button>
+            <button onClick={minusFive}>- 5</button>
+            <button onClick={divideScore}>half score</button>
+            <button onClick={resetScore}>reset</button>
           </div>
         </div>
         <div>
