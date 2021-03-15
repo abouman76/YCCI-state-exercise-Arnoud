@@ -1,24 +1,28 @@
 import { useState } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   const [score, setScore] = useState(0);
 
-  function plusOne() {
-    setScore(score + 1);
+  function scoreAdjustment(adjustScore) {
+    setScore(score + adjustScore);
   }
-  const minusOne = () => {
-    setScore(score - 1);
-  };
 
-  const plusFive = () => {
-    setScore(score + 5);
-  };
+  // function plusOne() {
+  //   setScore(score + 1);
+  // }
+  // const minusOne = () => {
+  //   setScore(score - 1);
+  // };
 
-  const minusFive = () => {
-    setScore(score - 5);
-  };
+  // const plusFive = () => {
+  //   setScore(score + 5);
+  // };
+
+  // const minusFive = () => {
+  //   setScore(score - 5);
+  // };
 
   const divideScore = () => {
     setScore(score / 2);
@@ -37,10 +41,10 @@ function App() {
             <p class="counter counter--blue">Team blue: {score}</p>
           </div>
           <div class="buttons">
-            <button onClick={plusOne}>+ 1</button>
-            <button onClick={minusOne}>- 1</button>
-            <button onClick={plusFive}>+ 5</button>
-            <button onClick={minusFive}>- 5</button>
+            <button onClick={() => scoreAdjustment(+1)}>+ 1</button>
+            <button onClick={() => scoreAdjustment(-1)}>- 1</button>
+            <button onClick={() => scoreAdjustment(+5)}>+ 5</button>
+            <button onClick={() => scoreAdjustment(-5)}>- 5</button>
             <button onClick={divideScore}>half score</button>
             <button onClick={resetScore}>reset</button>
           </div>
